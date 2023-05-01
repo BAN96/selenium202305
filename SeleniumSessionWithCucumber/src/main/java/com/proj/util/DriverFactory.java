@@ -1,10 +1,13 @@
 package com.proj.util;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class DriverFactiry {
+public class DriverFactory {
+	
 	public WebDriver driver;
 
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
@@ -32,6 +35,7 @@ public class DriverFactiry {
 		
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		return getDriver();
 	}
 	

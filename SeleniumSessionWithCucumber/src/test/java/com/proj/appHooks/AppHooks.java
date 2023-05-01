@@ -7,7 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import com.proj.util.ConfigReader;
-import com.proj.util.DriverFactiry;
+import com.proj.util.DriverFactory;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -15,7 +15,7 @@ import io.cucumber.java.Scenario;
 
 public class AppHooks {
 	private ConfigReader configReader;
-	private DriverFactiry diverfactory;
+	private DriverFactory diverfactory;
 	private WebDriver driver;
 	Properties prop;
 	
@@ -28,13 +28,13 @@ public class AppHooks {
 	@Before(order=1)
 	public void launchBrowser() {
 		String browser=prop.getProperty("browser");
-		diverfactory=new DriverFactiry();
+		diverfactory=new DriverFactory();
 		driver=diverfactory.initWebdriver(browser);
 	}
 	
 	@After(order = 0)
 	public void quitBrowser() {
-		driver.quit();
+		//driver.quit();
 	}
 
 	@After(order=1)
