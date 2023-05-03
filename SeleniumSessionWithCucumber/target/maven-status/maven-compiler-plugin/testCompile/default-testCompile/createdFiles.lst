@@ -1,0 +1,4 @@
+com\proj\stepDefinations\LoginPageSteps.class
+com\proj\stepDefinations\DashboardSteps.class
+com\proj\appHooks\AppHooks.class
+com\proj\runners\testRunner.class

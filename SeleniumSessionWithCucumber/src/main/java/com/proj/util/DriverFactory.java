@@ -35,7 +35,7 @@ public class DriverFactory {
 		
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 		return getDriver();
 	}
 	

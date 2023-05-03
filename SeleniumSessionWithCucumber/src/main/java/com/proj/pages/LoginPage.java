@@ -15,13 +15,15 @@ public class LoginPage {
 	@FindBy(name="password") private WebElement password;
 	
 	public LoginPage(WebDriver driver) {
-		PageFactory.initElements(driver,this);;
+		this.driver=driver;
+		PageFactory.initElements(this.driver,this);;
 	}
 	
-	public void enterLoginCred(String user,String pass) {
+	public Dashboard loginToApp(String user,String pass) {
 		username.sendKeys(user);
 		password.sendKeys(pass);
 		password.submit();
+		return new Dashboard(driver);
 	}
 	
 	public void enterUsername(String user) {
